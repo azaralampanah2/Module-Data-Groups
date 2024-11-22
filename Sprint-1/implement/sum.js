@@ -19,5 +19,5 @@ function sum(elements) {
   return sum1;
 }
 
-//console.log(sum([1,2,3,"bhk"]));
+//console.log(sum(["hgy","bhk"]));
 module.exports = sum;
