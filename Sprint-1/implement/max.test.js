@@ -61,6 +61,6 @@ test("non-numeric values should be ignored and ", () => {
 // Given an array with only non-number values
 // When passed to the max function
 // Then it should return the least surprising value given how it behaves for all other inputs
-test("non-numeric values should be ignored and ", () => {
-  expect(findMax(["hi","NO","uy"])).toEqual("hi");
+test("for non-numeric values should return the max of added ASCII values", () => {
+  expect(findMax(["hi", "NO", "byE"])).toEqual("-Infinity");
 });
