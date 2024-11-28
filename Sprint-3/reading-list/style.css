@@ -157,3 +157,23 @@ body {
     max-height: 80px;
   }
 }
+
+#firstBookDiv {
+  width: 100%;
+  height: 30%;
+  margin-bottom: 2%;
+  
+}
+
+#secondBookDiv {
+  width: 100%;
+  height: 30%;
+  margin-bottom: 2%;
+  
+}
+#thirdBookDiv {
+  width: 100%;
+  height: 30%;
+  margin-bottom: 2%;
+  
+}
