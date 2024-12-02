@@ -27,6 +27,7 @@ for (i = 0; i < books.length; i++) {
     let listItem = document.createElement("li");
     let text = document.createElement("p")
     let image = document.createElement("img")
+    
 
     let title = books[i].title + " by " + books[i].author
     text.innerHTML = title
