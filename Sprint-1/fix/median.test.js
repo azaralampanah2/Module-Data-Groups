@@ -13,8 +13,8 @@ describe("calculateMedian", () => {
   });
 
   test("returns the average of middle values for even length array", () => {
-    expect(calculateMedian([1, 2, 3, 4])).toEqual(2.5);
-    expect(calculateMedian([1, 2, 3, 4, 5, 6])).toEqual(3.5);
-    expect(calculateMedian([1, 2, 3, 4, 100, 100])).toEqual(3.5);
+    expect(calculateMedian([4, 1, 2, 3])).toEqual(2.5);
+    expect(calculateMedian([6, 2, 1, 5, 4, 3])).toEqual(3.5);
+    expect(calculateMedian([100, 2, 3, 4, 1, 100])).toEqual(3.5);
   });
 });
