@@ -17,7 +17,7 @@ const findMax = require("./max.js");
 // Then it should return -Infinity
 // Delete this test.todo and replace it with a test.
 test("an empty array should return -Infinity", () => {
-  expect(findMax([])).toBe("-Infinity");
+  expect(findMax([])).toBe(-Infinity);
 });
 
 // Given an array with one number
@@ -62,5 +62,5 @@ test("non-numeric values should be ignored and ", () => {
 // When passed to the max function
 // Then it should return the least surprising value given how it behaves for all other inputs
 test("for non-numeric values should return the max of added ASCII values", () => {
-  expect(findMax(["hi", "NO", "byE"])).toEqual("-Infinity");
+  expect(findMax(["hi", "NO", "byE"])).toEqual(-Infinity);
 });

@@ -4,11 +4,8 @@ function findMax(elements) {
   );
   let maxNumber = numericValues[0];
   //console.log(numericValues);
-  if (
-    elements.length === 0 ||
-    elements.every((element) => typeof element != "number")
-  ) {
-    return "-Infinity";
+  if (elements.length === 0 || numericValues.length == 0) {
+    return -Infinity;
   }
 
   for (let i = 1; i < numericValues.length; i++) {
