@@ -20,7 +20,8 @@ function populateTodoList(todos) {
     // Create 'Complete' button
     const completeBtn = document.createElement("button");
     completeBtn.innerText = "complete";
-    listItem.appendChild(completeBtn);
+    const newButton1 = listItem.appendChild(completeBtn);
+    newButton1.className = "newButton";
     completeBtn.addEventListener("click", () => {
       todos[index].complete = true;
       populateTodoList(todos);
@@ -31,7 +32,8 @@ function populateTodoList(todos) {
     // Create 'Delete' button
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "delete";
-    listItem.appendChild(deleteBtn);
+    const newButton = listItem.appendChild(deleteBtn);
+    newButton.className = "newButton";
     deleteBtn.addEventListener("click", () => {
       todos.splice(index, 1); // Remove the todo from the array
       populateTodoList(todos); // Refresh the list
