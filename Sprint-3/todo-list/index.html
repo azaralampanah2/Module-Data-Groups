@@ -8,10 +8,11 @@
   </head>
   <body>
     <form>
-      <div>
+      
+      <section id="mainToDo">
       
         <input type="text" id="inputToDo" placeholder="Add a new to-do"/>
-        <div>
+        
           <p></p>
         <button type="submit" id="addToDo">Add Todo</button>
  <button
@@ -21,14 +22,17 @@
         >
           Remove all completed
         </button>
-        </div>
-        <p>List of tasks:</p>
+      </section>
+      
+        <section id="tasksList">
+        <p id="title">List of tasks:</p>
+        
         <ul id="todo-list">
           
         </ul>
-                </div>
-      </div>
-     
+               
+      </section>
+      
     </form>
     <script src="script.js"></script>
   </body>
