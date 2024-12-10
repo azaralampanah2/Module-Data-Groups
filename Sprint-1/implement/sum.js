@@ -1,14 +1,12 @@
 function sum(elements) {
+  const numericValues = elements.filter(
+    (element) => typeof element === "number" && !isNaN(element)
+  );
   let sum1 = 0;
-  if (elements.every((Element) => typeof Element != "number")) {
+  if (numericValues.length == 0) {
     //if all the elemnts in the array are non-numerical it will add up the ASCII value of all characters
 
-    for (let element of elements) {
-      for (i = 0; i < element.length; i++) {
-        sum1 += element.charCodeAt(i);
-      }
-    }
-    return sum1;
+    return 0;
   }
 
   for (let element of elements) {

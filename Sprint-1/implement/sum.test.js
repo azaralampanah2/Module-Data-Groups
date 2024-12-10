@@ -49,5 +49,18 @@ test("if the array has non-numerical values inside, it should ignore them and ju
 // When passed to the sum function
 // Then it should return the least surprising value given how it behaves for all other inputs
 test("array with only non-number values will add up the ASCII of the values!", () => {
-  expect(sum(["hi", "bye", "hello"])).toBe(1061);
+  expect(sum(["hi", "bye", "hello"])).toBe(0);
 });
+test("array with only non-number values will add up the ASCII of the values!", () => {
+  expect(sum([undefined])).toBe(0);
+});
+test("array with only non-number values will add up the ASCII of the values!", () => {
+  expect(sum([])).toBe(0);
+});
+test("array with only non-number values will add up the ASCII of the values!", () => {
+  expect(sum([true])).toBe(0);
+});
+test("array with decimals number will return the sum with 2 decimal points", () => {
+  expect(sum([1.1, 1.1, 1.1])).toBeCloseTo(3.3, 2);
+});
+
