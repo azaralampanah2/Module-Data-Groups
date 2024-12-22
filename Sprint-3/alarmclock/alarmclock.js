@@ -21,7 +21,10 @@ function setAlarm() {
   timeDisplay.innerText = `Time Remaining: ${formatTime(remainingTime)}`;
 
   //clearInterval(countDownInterval);
-
+  document.getElementById("set").addEventListener("click", () => {
+    setAlarm();
+    clearInterval(countDownInterval);
+  });
   // Start a new interval
   countDownInterval = setInterval(() => {
     remainingTime -= 1;
@@ -55,9 +58,7 @@ function playAlarm() {
 }
 
 function pauseAlarm() {
-  
   audio.pause();
-  
 }
 
 window.onload = setup;
