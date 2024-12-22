@@ -5,7 +5,7 @@ const images = [
   "./assets/dog5.webp",
 ];
 let i = 0;
-let autoCount;
+let autoMoveInterval;
 const imageElement = document.getElementById("carousel-img");
 const backButton = document.getElementById("backward-btn");
 const foreButton = document.getElementById("forward-btn");
@@ -37,14 +37,16 @@ function previousImage() {
   imageElement.setAttribute("src", images[i]);
 }
 autoForeButton.addEventListener("click", () => {
-  autoCount = setInterval(nextImage, 2000);
+  clearInterval(autoMoveInterval);
+  autoMoveInterval = setInterval(nextImage, 2000);
 });
 stopButton.addEventListener("click", () => {
   stopAuto();
 });
 function stopAuto() {
-  clearInterval(autoCount);
+  clearInterval(autoMoveInterval);
 }
 autoBackButton.addEventListener("click", () => {
-  autoCount = setInterval(previousImage, 2000);
+  clearInterval(autoMoveInterval);
+  autoMoveInterval = setInterval(previousImage, 2000);
 });
