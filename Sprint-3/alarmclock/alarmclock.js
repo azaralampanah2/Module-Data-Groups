@@ -4,7 +4,7 @@ function setAlarm() {
   const alarmInput = document.getElementById("alarmSet");
   const setAlarmButton = document.getElementById("set");
   let countDownInterval;
-  const seconds = alarmInput.value;
+  const seconds = Number(alarmInput.value);
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60)
       .toString()
