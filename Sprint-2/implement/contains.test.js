@@ -51,7 +51,7 @@ test("input is not an object", () => {
   expect(contains(["a", "q", 5], "a")).toBe(false);
   expect(contains("hello", "e")).toBe(false);
   expect(contains(["a", "q", 5], 5)).toBe(false);
-
+  expect(contains(["a", "q", 2], 2)).toBe(false);
   expect(contains(45687, 4)).toBe(false);
   expect(contains(true, "r")).toBe(false);
 });
