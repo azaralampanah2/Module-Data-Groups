@@ -13,6 +13,8 @@ as the object doesn't contains a key of 'c'
 */
 test("object contains the property", () => {
   expect(contains({ a: 1, b: 2 }, "a")).toBe(true);
+  expect(contains({ a: 1, b: 2 }, "b")).toBe(true);
+
 });
 test("object doesn't contain the property", () => {
   expect(contains({ a: 1, b: 2 }, "c")).toBe(false);
