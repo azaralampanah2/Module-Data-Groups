@@ -1,15 +1,25 @@
 
 
+
+
 function createLookup(currencyCodes) {
   const createdObject = {};
   for (let i = 0; i < currencyCodes.length; i++) {
-    const splitArray = currencyCodes[i].map((element) => [element]); // Splits each element into arrays
-    const key = splitArray[0].join(); // Converts the first element to a string
-    const value = splitArray[1].join(); // Converts the second element to a string
-    createdObject[key] = value; // Adds key-value pair to the object
+    const [key, value] = currencyCodes[i]; // De-structure the array into key-value pairs
+    createdObject[key] = value; // Assign the key-value pair to the lookup object
   }
-  return createdObject;
+  return createdObject; // Return the lookup object
 }
+
+// Example usage
+const lookup = createLookup([
+  ["USD", "Dollar"],
+  ["EUR", "Euro"],
+  ["JPY", "Yen"],
+]);
+console.log(lookup); 
+// Output: { USD: "Dollar", EUR: "Euro", JPY: "Yen" }
+
 
 
 //console.log(
