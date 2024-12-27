@@ -48,4 +48,6 @@ test("should return empty object with empty array", () => {
 test("return error, as the input is not an array", () => {
   expect(tally(4353636)).toBe("Error! Input must be an array");
   expect(tally("Hello ")).toBe("Error! Input must be an array");
+  expect(tally({ a: 1, b: 2 })).toBe("Error! Input must be an array");
+  
 });

@@ -1,6 +1,6 @@
 function tally(mainArray) {
   const frequencyObject = {};
-  if (typeof mainArray != "object") {
+  if (!Array.isArray(mainArray)) {
     return "Error! Input must be an array";
   }
   for (element of mainArray) {
@@ -10,5 +10,8 @@ function tally(mainArray) {
   }
   return frequencyObject;
 }
+
+
+
 console.log(tally("aghdgdg"));
 module.exports = tally;
