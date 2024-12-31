@@ -1,13 +1,9 @@
 const toDoInput = document.getElementById("inputToDo");
-const addToDoBtn = document.getElementById("addToDo");
-const container = document.getElementById("todo-list");
-const removeAll = document.getElementById("remove-all-completed");
-addToDoBtn.addEventListener("click", () => {
-  addNewTodo(event);
-});
+const addToDoBtn = document.getElementById("addToDoBtn");
+//const container = document.getElementById("todo-list");
+const removeAllBtn = document.getElementById("remove-all-completedBtn");
 let todos = [];
 
-// Function to populate the todo list
 function populateTodoList(todos) {
   let list = document.getElementById("todo-list");
   list.innerHTML = ""; // Clear the list to avoid duplications
@@ -15,36 +11,40 @@ function populateTodoList(todos) {
   todos.forEach((todo, index) => {
     const listItem = document.createElement("li");
     listItem.innerText = todo.task;
+
+    // Apply completed style if the todo is marked as complete
+    if (todo.complete) {
+      listItem.style.textDecoration = "line-through";
+    }
+
+    // Add the listItem to the DOM before adding buttons
     list.appendChild(listItem);
 
     // Create 'Complete' button
     const completeBtn = document.createElement("button");
     completeBtn.innerText = "complete";
-    const newButton1 = listItem.appendChild(completeBtn);
-    newButton1.className = "newButton";
+    completeBtn.className = "newButton";
     completeBtn.addEventListener("click", () => {
       todos[index].complete = true;
       populateTodoList(todos);
     });
-    if (todo.complete) {
-      listItem.style.textDecoration = "line-through";
-    }
+    listItem.appendChild(completeBtn);
+
     // Create 'Delete' button
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "delete";
-    const newButton = listItem.appendChild(deleteBtn);
-    newButton.className = "newButton";
+    deleteBtn.className = "newButton";
     deleteBtn.addEventListener("click", () => {
       todos.splice(index, 1); // Remove the todo from the array
       populateTodoList(todos); // Refresh the list
     });
-
-    // Apply completed style if the todo is already marked as complete
+    listItem.appendChild(deleteBtn);
   });
 }
 
+
 // Function to add a new todo
-function addNewTodo(event) {
+/*function addNewTodo(event) {
   event.preventDefault(); // Prevent the page from refreshing
 
   const toDoInput = document.getElementById("todo-input");
@@ -55,10 +55,7 @@ function addNewTodo(event) {
     toDoInput.value = ""; // Clear the input field
   }
 }
-
-removeAll.addEventListener("click", () => {
-  deleteAllCompletedTodos(todos);
-});
+*/
 
 // Event listener for the Add button
 //document.getElementById("add-todo").addEventListener("click", addNewTodo);
@@ -95,3 +92,12 @@ function deleteAllCompletedTodos(todos) {
     }
   });
 }
+window.addEventListener("load", () => {
+  removeAllBtn.addEventListener("click", () => {
+    deleteAllCompletedTodos(todos);
+  });
+  addToDoBtn.addEventListener("click", () => {
+    addNewTodo(event);
+  });
+  
+});
