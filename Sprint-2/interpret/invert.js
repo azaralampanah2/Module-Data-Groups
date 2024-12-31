@@ -27,7 +27,7 @@ console.log(invert({a:1}));
 //{1:"a" , 2:"b"}
 
 // c) What does Object.entries return? Why is it needed in this program?
-// it converts each object's properties to indivisual arrays
+// provides a convenient way to access both keys and values of an object in a single operation, making it essential for efficiently inverting the object in this program.
 
 // d) Explain why the current return value is different from the target output
 //this function has 2 unexpected reaction:
