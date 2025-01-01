@@ -1,8 +1,12 @@
+
+
 function parseQueryString(queryString) {
   const queryParams = {};
   if (queryString.length === 0) {
     return queryParams;
   }
+  queryString = decodeURIComponent(queryString);
+
   const keyValuePairs = queryString.split("&");
   console.log(keyValuePairs);
   for (const pair of keyValuePairs) {
@@ -17,5 +21,11 @@ function parseQueryString(queryString) {
 
   return queryParams;
 }
-//console.log(parseQueryString(" "));
+
+console.log(parseQueryString("a%25b=c%26d"));
 module.exports = parseQueryString;
+
+
+
+
+

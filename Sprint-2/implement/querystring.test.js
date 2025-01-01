@@ -25,3 +25,17 @@ test("parses querystring with empty value", () => {
     string2: "",
   });
 });
+test("parse query string with more than &",()=>{
+  expect(parseQueryString("a=b&=&c=d")).toStrictEqual({a:"b","":"",c:"d"});
+  expect(parseQueryString("a=b&&c=d")).toStrictEqual({a:"b","":"",c:"d"})
+})
+test("parse query string with no key",()=>{
+  expect(parseQueryString("=b")).toStrictEqual({"":"b"})
+})
+test("parse query string with encoded charecters",()=>{
+  expect(parseQueryString("a%25b=c%26d")).toStrictEqual({
+    "a%b": "c",
+    "": "d"
+  }
+  )
+})
