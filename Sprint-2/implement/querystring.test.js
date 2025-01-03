@@ -34,8 +34,7 @@ test("parse query string with no key",()=>{
 })
 test("parse query string with encoded charecters",()=>{
   expect(parseQueryString("a%25b=c%26d")).toStrictEqual({
-    "a%b": "c",
-    "": "d"
+    "a%b": "c&d"
   }
   )
 })
